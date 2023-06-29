@@ -38,6 +38,7 @@ const CreatePost = () => {
         prompt: '',
         photo: '',
     });
+    const [img, setImg] = useState(null); 
     const [generatingImg, setGeneratingImg] = useState(false);
     const [loading, setLoading] = useState(false);
 
@@ -46,25 +47,27 @@ const CreatePost = () => {
 
         if (form.prompt && form.photo) {
             setLoading(true);
-            try {
-                // console.log(form);
+        try {
+                const formData = new FormData();
+                formData.append('name', form.name);
+                formData.append('prompt', form.prompt);
+                formData.append('photo', img);
+                console.log(img)
                 const response = await fetch('http://localhost:8080/api/v1/post', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ ...form }),
+                    body: formData,
                 });
-                await response.json();
-                // alert('Success');
-                navigate('/');
+
+                if (response.ok) {
+                    navigate('/');
+                } else {
+                    throw new Error('HTTP request failed');
+                }
             } catch (error) {
                 alert(error);
-            }
-            finally {
+            } finally {
                 setLoading(false);
             }
-
         }
         else {
             alert("Please generate image with proper details");
@@ -95,13 +98,10 @@ const CreatePost = () => {
                 );
                 const data = await response.blob();
 
-                //conversion of blob to json but giving errors
-                // const jsonData=await blobToJson(data);
-                // setForm({ ...form, photo: `${jsonData.photo}` });
-
                 const imgurl = URL.createObjectURL(data);
                 // setForm({ ...form, photo: `${imgurl}` });
-                setForm({ ...form, photo: imgurl });
+                setForm({ ...form, photo: imgurl});
+                setImg(data);
                 console.log(form);
             } catch (error) {
                 alert(error);

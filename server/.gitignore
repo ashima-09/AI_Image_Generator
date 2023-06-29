@@ -1,0 +1,33 @@
+# Directories
+node_modules/
+dist/
+coverage/
+
+# Environment files
+.env
+
+# IDE files
+.vscode/
+.idea/
+
+# Log files
+*.log
+
+# Dependency lock files
+package-lock.json
+yarn.lock
+
+# Build artifacts
+*.exe
+*.dll
+*.so
+*.dylib
+
+# macOS files
+.DS_Store
+
+# Editor configuration
+.editorconfig
+
+# System files
+Thumbs.db

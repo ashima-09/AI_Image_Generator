@@ -11,6 +11,7 @@ dotenv.config();
 
 //setting up express application
 const app = express();
+app.timeout = 60000;
 app.use(cors());
 app.use(express.json({ limit: '50mb' }));
 
