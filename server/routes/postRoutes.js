@@ -31,14 +31,14 @@ router.route('/').post(async (req, res) => {
     console.log("entered post");
     try {
       const { name, prompt, photo } = req.body;
-      const photoUrl = await cloudinary.uploader.upload(photo);
+      //const photoUrl = await cloudinary.uploader.upload(photo);
   
       const newPost = await Post.create({
         name,
         prompt,
-        photo: photoUrl.url,
+        photo: "photoUrl",
       });
-    //   console.log("new post: "+newPost);
+      console.log("new post: "+newPost);
       res.status(201).json({ success: true, data: newPost });
     } catch (err) {
       res.status(500).json({ success: false, message: 'Unable to create a post, please try again' });
