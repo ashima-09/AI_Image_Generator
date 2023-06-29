@@ -13,3 +13,24 @@ An AI-based Image Generator, a MERN stack application that utilizes the Stable D
 
 - MERN Stack (MongoDB, Express.js, React, Node.js)
 - Stable Diffusion Model API
+
+## Usage
+1. Clone the repository
+
+```bash
+git clone https://github.com/ashima-09/AI_Image_Generator
+```
+
+2. Run the server directory
+   
+```bash
+npm i
+npm start run
+```
+
+3. Run the client directory
+
+```bash
+npm i
+npm run dev
+```
