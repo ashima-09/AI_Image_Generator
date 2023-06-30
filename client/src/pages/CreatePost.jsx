@@ -53,7 +53,7 @@ const CreatePost = () => {
                 formData.append('prompt', form.prompt);
                 formData.append('photo', img);
                 console.log(img)
-                const response = await fetch('http://localhost:8080/api/v1/post', {
+                const response = await fetch('https://ai-gen-backend.onrender.com/api/v1/post', {
                     method: 'POST',
                     body: formData,
                 });
