@@ -22,7 +22,7 @@ app.use('/api/v1/post',postRoutes);
 //to get to know that our application is running whenever we visit the url
 app.get('/', async (req, res) => {
     res.status(200).json({
-      message: 'Hello from DALL.E!',
+      message: 'Hello from GEN.AI!',
     });
   });
 
