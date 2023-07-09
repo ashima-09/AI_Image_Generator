@@ -13,6 +13,7 @@ An AI-based Image Generator, a MERN stack application that utilizes the Stable D
 
 - MERN Stack (MongoDB, Express.js, React, Node.js)
 - Stable Diffusion Model API
+- Cloudinary
 
 ## Usage
 1. Clone the repository
