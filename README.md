@@ -1,4 +1,4 @@
-# AI-based Image Generator
+# GEN.AI
 
 An AI-based Image Generator, a MERN stack application that utilizes the Stable Diffusion Model API to generate images based on user prompts. The application allows users to input prompts and enables sharing them with the community.
 
